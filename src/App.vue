@@ -54,7 +54,7 @@ const result = () => {
   } else if(amal == 3) {
     input.value = a * input.value * 1
   } else if(amal == 4) {
-    input.value == a / input.value * 1
+    input.value = a / input.value * 1
   }
 }
 
@@ -106,7 +106,7 @@ const result = () => {
           <button @click="number(9)" class="w-full px-10 py-2 cursor-pointer">9</button>
         </div>
         <div class="flex w-24 text-gray-900 bg-gray-200 rounded">
-          <button class="w-full px-10 py-2 cursor-pointer">÷</button>
+          <button @click="devision" class="w-full px-10 py-2 cursor-pointer">÷</button>
         </div>
       </div>
       <div class="flex justify-between mt-2 mb-2">
@@ -129,7 +129,7 @@ const result = () => {
           <button @click="number(6)" class="w-full px-10 py-2 cursor-pointer">6</button>
         </div>
         <div class="flex w-24 text-gray-900 bg-gray-200 rounded">
-          <button class="w-full px-10 py-2 cursor-pointer">x</button>
+          <button @click="times" class="w-full px-10 py-2 cursor-pointer">x</button>
         </div>
       </div>
       <div class="flex justify-between mt-2 mb-2">
@@ -152,7 +152,7 @@ const result = () => {
           <button @click="number(3)" class="w-full px-10 py-2 cursor-pointer">3</button>
         </div>
         <div class="flex w-24 text-gray-900 bg-gray-200 rounded">
-          <button class="w-full px-10 py-2 cursor-pointer">-</button>
+          <button @click="minus" class="w-full px-10 py-2 cursor-pointer">-</button>
         </div>
       </div>
       <div class="flex justify-between mt-2 mb-2">
