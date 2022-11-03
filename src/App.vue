@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 const input = ref(0)
 let count = 0
+const firstnum = ref(0)
 
 const number = (num) => {
   count += 1
@@ -22,6 +23,7 @@ const zero = (num) => {
 const clear = () => {
   input.value = 0
   count = 0
+  firstnum.value = ''
 }
 let a = 0, b = 0, amal = 1
 
@@ -29,21 +31,25 @@ const add = () => {
   a = input.value * 1
   amal = 1
   input.value = ""
+  firstnum.value = a + '+'
 }
 const minus = () => {
   a = input.value * 1
   amal = 2
   input.value = ""
+  firstnum.value = a + '-'
 }
 const times = () => {
   a = input.value * 1
   amal = 3
   input.value = ""
+  firstnum.value = a + '*'
 }
 const devision = () => {
   a = input.value * 1
   amal = 4
   input.value = ""
+  firstnum.value = a + '/'
 }
 
 const result = () => {
@@ -62,7 +68,10 @@ const result = () => {
 
 <template>
   <div class="container max-w-3xl p-3 mx-auto my-4 rounded">
-    <input v-model="input" class="w-full px-2 py-4 text-3xl text-right border rounded hover:cursor-text" disabled/>
+    <div class="relative">
+      <span class="absolute flex w-full justify-end">{{ firstnum }}</span>
+      <input v-model="input" class="w-full px-2 py-4 text-3xl text-right border rounded hover:cursor-text" disabled/>
+    </div>
     <div>
       <div class="flex justify-between mt-2 mb-2">
         <div class="flex mr-2 text-gray-900 bg-gray-200 rounded">
